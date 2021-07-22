@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right, purple, rgb(0, 0, 255), rgb(61, 61, 207), rgb(21, 228, 228), rgb(218, 213, 213));
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+button{
+  cursor: pointer;
+}
+#face{
+  cursor: pointer;
+}
