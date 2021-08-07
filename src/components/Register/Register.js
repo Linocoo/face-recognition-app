@@ -40,7 +40,6 @@ onSubmitSignIn = () => {
     }
 
      render() {
-    const { onRouteChange } = this.props;
     return (
         <article className='br3 ba shadow-1 b--black-10 mv4 w-100 w-50-m w-25-l mw5 center'>
             <main className='pa4 black-80'>
@@ -48,7 +47,7 @@ onSubmitSignIn = () => {
                     <fieldset id='sign_up' className='b b--transparent ph0 mh0'>
                         <legend className='f1 fw6 ph0 mh0'>Register</legend>
                         <div className='mt3'>
-                            <label className='db fw6 lh-copy f6' htmlFor='name'>Name</label>
+                            <label className='db fw6 lh-copy f6' htmlFor='name' placeholder="Enter your name...">Student's Name</label>
                             <input
                                 className='pa2 input-reset ba bg-transparent hover-bg-purple hover-white w-100'
                                 type='text'
@@ -58,7 +57,7 @@ onSubmitSignIn = () => {
                             />
                         </div>
                         <div className='mt3'>
-                            <label className='db fw6 lh-copy f6' htmlFor='email-address'>Email</label>
+                            <label className='db fw6 lh-copy f6' htmlFor='email-address' placeholder="Enter your email...">Your Email</label>
                             <input
                                 className='pa2 input-reset ba bg-transparent hover-bg-pink hover-white w-100'
                                 type='email'
@@ -68,7 +67,7 @@ onSubmitSignIn = () => {
                             />
                         </div>
                         <div className='mt3'>
-                            <label className='db fw6 lh-copy f6' htmlFor='password'>Password</label>
+                            <label className='db fw6 lh-copy f6' htmlFor='password' placeholder="password...">Password</label>
                             <input
                                 className='pa2 input-reset ba bg-transparent hover-bg-blue hover-white w-100'
                                 type='password'

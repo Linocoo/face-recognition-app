@@ -9,13 +9,13 @@ import Rank from './components/Rank/Rank';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import './App.css';
-import { Notifier } from '@airbrake/browser';
+// import { Notifier } from '@airbrake/browser';
 
-const airbrake = new Notifier({
-  projectId: 348001,
-  projectKey: '06e1235147e861a2ee7d5ab21cc2827e',
-  environment: 'production'
-});
+// const airbrake = new Notifier({
+//   projectId: 348001,
+//   projectKey: '06e1235147e861a2ee7d5ab21cc2827e',
+//   environment: 'production'
+// });
 
 
 const app = new Clarifai.App({
@@ -47,7 +47,6 @@ class App extends Component{
           id: '',
           name: '',
           email: '',
-          password:'',
           entries: 0,
           joined: ''
         }
@@ -95,16 +94,14 @@ class App extends Component{
         if(response) {
           fetch('http://localhost:5000/image', {
           method:'put',
-          headers:{'Content-Type': 'application/json'},
+          headers:{'Content-Type':'application/json'},
           body: JSON.stringify({
           id: this.state.user.id
           })
         })
         .then(response => response.json())
         .then(count => {
-          this.setState({users: {
-            entries: count
-          }})
+          this.setState(Object.assign(this.state.user, { entries: count}))
         })
       }
           this.displayFaceBox (this.calculateFaceLocation(response))
@@ -129,7 +126,7 @@ class App extends Component{
           params={particlesOptions}
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        {route === 'home'
+        {route === '/home'
           ? <div>
                 <Logo />
                 <Rank />
